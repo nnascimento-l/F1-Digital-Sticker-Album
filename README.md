@@ -163,3 +163,13 @@ Ligar/desligar som	Botão de alto-falante no canto
 ## Pontos de atenção para evoluir o projeto
 Ligar o clique dos slots às rotas `POST /colar` e `/descolar` do backend, para o progresso persistir entre recarregamentos (e fazer sentido usar `GET /figurinhas/total` para um contador).
 Restringir `allow_origins` no CORS antes de qualquer deploy fora do `localhost`.
+
+## 👨‍💻 Autor
+
+Desenvolvido por **Lucas Nascimento**
+
+* **LinkedIn:** www.linkedin.com/in/lucasnascimentoosilva
+
+<img width="1917" height="1076" alt="Captura de tela 2026-09-04 231620" src="https://github.com/user-attachments/assets/6ee408e5-c47f-4895-a12e-d60add5e4b12" />
+
+<img width="1917" height="1076" alt="Captura de tela 2026-09-04 231713" src="https://github.com/user-attachments/assets/c18b32cf-992c-4dea-a6dd-d36fb6847312" />
