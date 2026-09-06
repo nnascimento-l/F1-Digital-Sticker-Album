@@ -3,7 +3,20 @@
 // Quando o frontend for servido pelo FastAPI (Dia 3), a API está
 // no mesmo servidor — usamos uma URL relativa ou o endereço completo.
 // ===================================================
-const API_BASE_URL = "hhttp://127.0.0.1:5300"; // Sua URL do Render
+const API_BASE_URL = "https://f1-digital-sticker-album.onrender.com"; // Sua URL do Render
+
+// Ao renderizar a imagem da figurinha:
+img.src = `${API_BASE_URL}${figurinha.imagem_url}`;
+
+async function carregarFigurinhas() {
+  try {
+    const resposta = await fetch(`${API_BASE_URL}/figurinhas`);
+    const figurinhas = await resposta.json();
+    // renderizar os cards usando os dados retornados
+  } catch (erro) {
+    console.error("Erro ao carregar figurinhas:", erro);
+  }
+}
 
 // ===================================================
 // FUNÇÃO: Preenche os slots do álbum com imagens da API
