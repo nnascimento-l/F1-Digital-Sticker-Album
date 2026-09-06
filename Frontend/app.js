@@ -8,6 +8,16 @@ const API_BASE_URL = "https://f1-digital-sticker-album.onrender.com"; // Sua URL
 // Ao renderizar a imagem da figurinha:
 img.src = `${API_BASE_URL}${figurinha.imagem_url}`;
 
+async function carregarFigurinhas() {
+  try {
+    const resposta = await fetch(`${API_BASE_URL}/figurinhas`);
+    const figurinhas = await resposta.json();
+    // renderizar os cards usando os dados retornados
+  } catch (erro) {
+    console.error("Erro ao carregar figurinhas:", erro);
+  }
+}
+
 // ===================================================
 // FUNÇÃO: Preenche os slots do álbum com imagens da API
 // Esta função é chamada após o álbum ser inicializado.
