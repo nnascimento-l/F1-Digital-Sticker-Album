@@ -6,7 +6,9 @@ from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 
 # CORSMiddleware libera o acesso à API a partir de outras origens (portas/domínios)
-from fastapi.middleware.cors import CORSMiddleware
+from fastapi.middleware.cors import CORSMiddlew
+
+from fastapi.staticfiles import StaticFiles
 
 # O módulo os é usado para montar caminhos de pasta e ler variáveis de ambiente
 import os
@@ -24,19 +26,18 @@ app = FastAPI()
 
 # Configura o CORS
 app.add_middleware(
-
     CORSMiddleware,
-
     allow_origins=["*"],
-
     allow_credentials=False,
-
     allow_methods=["*"],
-
     allow_headers=["*"],
-
 )
 
+# Garante que a pasta de imagens seja servida via HTTP
+caminho_imagens = os.path.join(os.path.dirname(__file__), "Figurinhas F1")
+if os.path.exists(caminho_imagens):
+   app.mount("/imagens", StaticFiles(directory=caminho_imagens), name="imagens")
+   
 # Caminho absoluto até a pasta onde este arquivo está
 
 PASTA_BASE = os.path.dirname(os.path.abspath(__file__))
