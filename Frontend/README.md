@@ -43,10 +43,19 @@ O objetivo principal é construir uma aplicação web interativa que simula a ex
 1. **Frontend**:
    * Abra o arquivo `index.html` no seu navegador (recomenda-se utilizar a extensão *Live Server* no VS Code ou similar para evitar bloqueios de CORS ao carregar recursos locais).
    
-2. **Backend**:
-   * Para carregar as figurinhas reais a partir do servidor, certifique-se de iniciar o backend fornecido:
+2. **Backend:**
+
+   * **Primeira execução (Instalação):**
+     Navegue até a pasta do servidor e instale as dependências do projeto:
      ```bash
-     cd backend/dia-3
-     uvicorn main:app --reload
+     cd Backend
+     pip install -r requirements.txt
      ```
-   * O frontend tentará se conectar em `http://localhost:8000`. Se o backend não estiver rodando, o álbum funcionará normalmente, exibindo os slots vazios ou de demonstração.
+
+   * **Iniciando o servidor:**
+     Após instalar as dependências (ou nas execuções seguintes), inicie a API:
+     ```bash
+     python main.py
+     ```
+
+   * O frontend tentará se conectar em `http://127.0.0.1:5300`. Se o backend não estiver rodando, o álbum funcionará normalmente, exibindo os slots vazios ou de demonstração.
